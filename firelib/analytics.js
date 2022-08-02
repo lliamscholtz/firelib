@@ -3,9 +3,9 @@
 Analytics SDK
 ===========================================================================
 
-A Firebase App is a container-like object that stores common configuration 
-and shares authentication across Firebase services. After you initialize a 
-Firebase App object in your code, you can add and start using Firebase services.
+Analytics reports help you understand clearly how your users behave, 
+which enables you to make informed decisions regarding app marketing 
+and performance optimizations.
 
 https://firebase.google.com/docs/analytics/get-started
 */
