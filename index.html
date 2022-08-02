@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firebase Library</title>
+
+  <script type="module">
+    // =====================================
+    // Initialize Application
+    // =====================================
+    import { app } from '/firelib/_init.js'
+
+    // =====================================
+    // Analytics SDK
+    // =====================================
+    import { FirebaseAnalytics } from '/firelib/analytics.js'
+    const analytics = new FirebaseAnalytics(app);
+
+    // property
+    analytics.property({ user_type: 'developer' });
+
+    // event
+    analytics.event('custom_event', {
+      platform: 'web',
+      environment: 'dev'
+    });
+
+    // ecommerce events - https://firebase.google.com/docs/analytics/measure-ecommerce
+    import { item_jeggings, item_boots, item_socks, item_list, item_list_select, cart } from '/store/products.js';
+    analytics.event('view_item_list', item_list);
+    analytics.event('select_item', item_list_select);
+    analytics.event('view_item', item_jeggings);
+    analytics.event('add_to_wishlist', item_jeggings);
+    analytics.event('add_to_cart', item_jeggings);
+    analytics.event('view_cart', cart);
+    analytics.event('remove_from_cart', cart);
+    analytics.event('begin_checkout', cart);
+    analytics.event('complete_checkout', cart);
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>
